@@ -10,6 +10,18 @@
 <body>
 <h1>Eerste demo, gebruik van functies</h1>
 <p>Deze pagina toont de inhoud van een array</p>
-
+<?php
+foreach ($data as $key => $value) {
+    if (is_array($value)) {
+        echo "<strong>$key</strong>:<br>";
+        foreach ($value as $item) {
+            // Hoe gaan we voor zorgen dat als het $item ook een array is, dat we die ook netjes tonen?
+            echo "- $item<br>";
+        }
+    } else {
+        echo "<strong>$key</strong>: $value<br>";
+    }
+}
+?>
 </body>
 </html>
